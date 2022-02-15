@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.App {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* .btn-flat {
+  border-color: #014F8E;
+  color: white;
+} */
+.App-link {
+  color: #61dafb;
+}
+
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 60px 0;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
