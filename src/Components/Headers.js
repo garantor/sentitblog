@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router-dom'
 // }
 
 function Headers({signup_title, signup_callback, login_title}) {
+  
   let navigate = useNavigate();
   return (
   <div>

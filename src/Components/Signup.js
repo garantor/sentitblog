@@ -2,6 +2,8 @@
 import { Form } from 'react-bootstrap'
 import MainButton from './Button'
 import { useState } from 'react'
+import useFetch from './useFetch'
+import axios from 'axios'
 
 
 
@@ -9,7 +11,10 @@ function SignupForm() {
      const [email, setEmail] = useState('')
      const [password, setPassword] = useState('')
      const [confirmPassword, setConfirmPassword] = useState('')
+     const [apiReply, setapireply] = useState('')
 
+    
+    
 
     function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -26,17 +31,32 @@ function SignupForm() {
       setConfirmPassword(event.target.value)
   }
     function FormResetHandler(event){
-        console.log("Found")
     event.preventDefault();
+    window.alert("Form Submitted")
     setEmail('');
     setPassword('');
     setConfirmPassword('');
+    setapireply('');
     }
 
     function SignUpUser(){
         console.log("user signup")
+        console.log(email, password, confirmPassword)
+        axios({
+          method: "post",
+          url: "http://localhost:5000/users",
+          data:{
+            email:email,
+            password:password
+          }
+          
+        }).then((response) => { setapireply(response.data);
+        })
+
+
+    console.log(apiReply)
+    
     }
-   
 
   return (
      <div className="Login">
